@@ -7,7 +7,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'Отчет_ЛР_IDEF0_вариант_18.docx'
+OUT = ROOT / 'Отчет_Лабораторная_работа_EDF0_Траньков.docx'
 EXPORTS = ROOT / 'exports'
 
 def set_font(run, size=12, bold=False, name='Times New Roman'):
@@ -92,7 +92,7 @@ doc.styles['Normal'].font.size = Pt(12)
 title = doc.add_paragraph(style='Title')
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 title.paragraph_format.space_after = Pt(9)
-run = title.add_run('Лабораторная работа IDEF0')
+run = title.add_run('Лабораторная работа EDF0')
 set_font(run, 18, True)
 para(doc, 'Построение функциональной модели предметной области', 14, align=WD_ALIGN_PARAGRAPH.CENTER, after=4)
 para(doc, 'Вариант 18. Учёт выдачи и возврата изданий в библиотеке', 13, align=WD_ALIGN_PARAGRAPH.CENTER, after=28)
@@ -210,6 +210,6 @@ para(doc, 'Построенная модель разделяет учёт вы�
 
 footer=sec.footer.paragraphs[0]
 footer.alignment=WD_ALIGN_PARAGRAPH.CENTER
-set_font(footer.add_run('Лабораторная работа IDEF0, вариант 18'),9)
+set_font(footer.add_run('Лабораторная работа EDF0, вариант 18'),9)
 doc.save(OUT)
 print(OUT)
